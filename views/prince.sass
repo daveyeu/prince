@@ -1,0 +1,80 @@
+@page
+  size: US-Letter
+  margin: 100px 10px 20px 10px
+  @top
+    content: flow(header)
+  @bottom
+    content: counter(page)
+    padding-bottom: 10px
+
+body
+  counter-reset: sections
+  width: 750px
+  margin: 0 auto
+  font:
+    family: Helvetica, Arial, sans
+    size: 12px
+
+  #header
+    flow: static(header)
+
+  span.label
+    font-weight: bold
+
+  .section
+    counter-increment: sections
+    padding-left: 40px
+    margin-bottom: 40px
+    .clear
+      clear: both
+
+    h2
+      border-bottom: 2px solid black
+    h2::before
+      content: counter(sections) ". "
+
+    dl
+      dt,dd
+        margin: 0
+        padding: 3px 5px
+        float: left
+        border-bottom: 1px dotted #CCCCCC
+      dt
+        width: 80px
+        background: #E0E9FF
+      dd
+        width: 255px
+        background: #EEEEEE
+      .name
+        font-weight: bold
+
+    table
+      border-collapse: collapse
+      font-size: 12px
+      th, td
+        border: 1px solid black
+        padding: 5px
+        vertical-align: top
+      th
+        background: #EEEEEE
+        text-align: left
+        font-size: 11px
+
+    ul.signatures
+      list-style: none
+      margin: 0
+      padding: 0
+      li
+        clear: both
+      .signature, .date
+        float: left
+        margin-top: 25px
+      .signature
+        width: 460px
+        border-bottom: 1px solid black
+      .date
+        width: 250px
+        border-bottom: 1px solid black
+      .name
+        font-style: italic
+        margin-left: 75px
